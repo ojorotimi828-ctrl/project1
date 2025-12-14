@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercy Bite & Bunmi Cake and Partries - Premium Dining in Ore, Ondo State</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary-color: #0004ff7e; /* Deep Crimson Red */
+            --secondary-color: #FFD700; /* Gold */
+            --bg-dark: #ff2600; /* Very Dark Gray/Black */
+            --text-light: #fdf907; /* Light Gray/yellow */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            scroll-behavior: smooth;
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+        .header-bg {
+            background: url('mee.jpg') center center / cover;
+            position: relative;
+        }
+        .header-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+        .menu-item-card:hover .menu-item-price {
+            transform: scale(1.05);
+            background-color: var(--secondary-color);
+            color: var(--bg-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav Bar -->
+    <header class="sticky top-0 z-50 bg-bg-dark/95 backdrop-blur-sm shadow-xl">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#hero" class="text-3xl font-extrabold tracking-tight" style="color: var(--primary-color);">
+                    Mercy<span style="color: var(--secondary-color);">Bite & Bunmi Cake</span>
+                </a>
+                <div class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#menu" class="hover:text-primary-color transition duration-300">Menu</a>
+                    <a href="#gallery" class="hover:text-primary-color transition duration-300">Gallery</a>
+                    <a href="#reservations" class="hover:text-primary-color transition duration-300">Reservations</a>
+                    <a href="#contact" class="hover:text-primary-color transition duration-300">Contact</a>
+                </div>
+                <a href="#reservations" class="hidden md:block px-4 py-2 rounded-full font-semibold transition duration-300" style="background-color: var(--secondary-color); color: var(--bg-dark);">
+                    Book Table
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md hover:bg-gray-700 transition duration-150">
+                    <i data-lucide="menu" class="w-6 h-6 text-white"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 w-full bg-bg-dark/95 backdrop-blur-md z-40 shadow-lg p-4">
+            <a href="#menu" class="block py-2 text-center text-lg hover:text-primary-color border-b border-gray-700" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Menu</a>
+            <a href="#gallery" class="block py-2 text-center text-lg hover:text-primary-color border-b border-gray-700" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Gallery</a>
+            <a href="#reservations" class="block py-2 text-center text-lg hover:text-primary-color border-b border-gray-700" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Reservations</a>
+            <a href="#contact" class="block py-2 text-center text-lg hover:text-primary-color" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contact</a>
+            <a href="#reservations" class="block mt-4 py-2 text-center rounded-full font-semibold" style="background-color: var(--primary-color); color: white;" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Book Now</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="header-bg h-[80vh] flex items-center justify-center">
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-6xl sm:text-7xl lg:text-8xl font-black mb-4 tracking-tighter" style="color: var(--secondary-color);">
+                Mercy Bite
+            </h1>
+            <p class="text-xl sm:text-2xl text-white font-light mb-8 max-w-2xl mx-auto">
+                Where Premium Nigerian Cuisine Meets Elegance in Ore, Ondo State.
+            </p>
+            <a href="#reservations" class="inline-flex items-center space-x-2 px-8 py-3 rounded-full text-lg font-bold shadow-2xl hover:scale-[1.02] transition duration-300" style="background-color: var(--primary-color); color: var(--text-light);">
+                <i data-lucide="calendar-check" class="w-6 h-6"></i>
+                <span>Reserve Your Table</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Digital Menu Section -->
+    <section id="menu" class="py-20 lg:py-28">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl font-extrabold text-center mb-12 tracking-tight" style="color: var(--primary-color);">
+                Our Digital Menu
+            </h2>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- Menu Category: Signature Dishes -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-bold mb-6 text-center" style="color: var(--secondary-color);">Signature Rice & Staples</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Item 1: Jollof Rice -->
+                        <div class="menu-item-card flex justify-between items-start border-b border-gray-700 pb-4 transition duration-300">
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Mercy's Party Jollof</h4>
+                                <p class="text-gray-400 text-sm">Smoky, spiced tomato rice served with tender grilled chicken.</p>
+                            </div>
+                            <span class="menu-item-price ml-4 px-4 py-1 rounded-full font-bold text-lg transition duration-300" style="background-color: var(--primary-color); color: var(--text-light);">
+                                ₦4,500
+                            </span>
+                        </div>
+                        <!-- Item 2: Fried Rice -->
+                        <div class="menu-item-card flex justify-between items-start border-b border-gray-700 pb-4 transition duration-300">
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Golden Fried Rice Special</h4>
+                                <p class="text-gray-400 text-sm">Wok-tossed rice with mixed veggies, shrimp, and diced liver.</p>
+                            </div>
+                            <span class="menu-item-price ml-4 px-4 py-1 rounded-full font-bold text-lg" style="background-color: var(--primary-color); color: var(--text-light);">
+                                ₦4,800
+                            </span>
+                        </div>
+                        <!-- Item 3: Ofada Rice -->
+                        <div class="menu-item-card flex justify-between items-start border-b border-gray-700 pb-4 transition duration-300">
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Ofada Rice & Ayamase Stew</h4>
+                                <p class="text-gray-400 text-sm">Authentic local brown rice served with rich, green pepper stew.</p>
+                            </div>
+                            <span class="menu-item-price ml-4 px-4 py-1 rounded-full font-bold text-lg" style="background-color: var(--primary-color); color: var(--text-light);">
+                                ₦5,200
+                            </span>
+                        </div>
+                        <!-- Item 4: Pasta -->
+                        <div class="menu-item-card flex justify-between items-start border-b border-gray-700 pb-4 transition duration-300">
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Seafood Pasta Marinara</h4>
+                                <p class="text-gray-400 text-sm">Spaghetti with prawns, calamari, and a creamy tomato sauce.</p>
+                            </div>
+                            <span class="menu-item-price ml-4 px-4 py-1 rounded-full font-bold text-lg" style="background-color: var(--primary-color); color: var(--text-light);">
+                                ₦6,500
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Category: Traditional Soups & Swallow -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-bold mb-6 text-center" style="color: var(--secondary-color);">Traditional Soups & Swallow</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Item 5: Egusi Soup -->
+                        <div class="menu-item-card flex justify-between items-start border-b border-gray-700 pb-4 transition duration-300">
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Egusi Soup (Melon Seed)</h4>
+                                <p class="text-gray-400 text-sm">Rich, savory soup with assorted meat and stockfish. Served with Eba/Fufu.</p>
+                            </div>
+                            <span class="menu-item-price ml-4 px-4 py-1 rounded-full font-bold text-lg" style="background-color: var(--primary-color); color: var(--text-light);">
+                                ₦6,000
+                            </span>
+                        </div>
+                        <!-- Item 6: Afang Soup -->
+                        <div class="menu-item-card flex justify-between items-start border-b border-gray-700 pb-4 transition duration-300">
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Afang Soup (Vegetable)</h4>
+                                <p class="text-gray-400 text-sm">A delightful blend of water leaf and Afang leaf, perfectly spiced.</p>
+                            </div>
+                            <span class="menu-item-price ml-4 px-4 py-1 rounded-full font-bold text-lg" style="background-color: var(--primary-color); color: var(--text-light);">
+                                ₦6,500
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="text-xl font-semibold mb-2 text-center" style="color: var(--text-light);">Swallow Options (Add-on)</h4>
+                        <p class="text-center text-gray-400">Pounded Yam, Semovita, Fufu, Eba (₦1,000 each)</p>
+                    </div>
+                </div>
+
+                <!-- Menu Category: Grills & Sides -->
+                <div>
+                    <h3 class="text-3xl font-bold mb-6 text-center" style="color: var(--secondary-color);">Grills & Sides</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Item 7: Catfish Peppersoup -->
+                        <div class="menu-item-card flex justify-between items-start border-b border-gray-700 pb-4 transition duration-300">
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Catfish Peppersoup (Large)</h4>
+                                <p class="text-gray-400 text-sm">Spicy, aromatic fish broth that is perfect as a starter or meal.</p>
+                            </div>
+                            <span class="menu-item-price ml-4 px-4 py-1 rounded-full font-bold text-lg" style="background-color: var(--primary-color); color: var(--text-light);">
+                                ₦7,000
+                            </span>
+                        </div>
+                        <!-- Item 8: Grilled Plantain -->
+                        <div class="menu-item-card flex justify-between items-start border-b border-gray-700 pb-4 transition duration-300">
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Grilled Plantain (Boli) & Sauce</h4>
+                                <p class="text-gray-400 text-sm">Sweetly charred plantains served with a savory peppered sauce.</p>
+                            </div>
+                            <span class="menu-item-price ml-4 px-4 py-1 rounded-full font-bold text-lg" style="background-color: var(--primary-color); color: var(--text-light);">
+                                ₦3,500
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="py-20 lg:py-28 bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl font-extrabold text-center mb-12 tracking-tight" style="color: var(--secondary-color);">
+                A Taste of Mercy Bite
+            </h2>
+            <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+                Discover the visual artistry of our dishes. Every meal is a masterpiece prepared with fresh, local ingredients.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1: Jollof Rice -->
+                <div class="rounded-xl overflow-hidden shadow-lg transform hover:scale-[1.03] transition duration-500 group">
+                    <img src="ggggggggg.jpg" alt="Jollof Rice and Chicken" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-gray-800">
+                        <h4 class="text-xl font-semibold" style="color: var(--secondary-color);">Smoky Jollof</h4>
+                        <p class="text-sm text-gray-400">Our signature rice dish.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2: Pounded Yam & Soup -->
+                <div class="rounded-xl overflow-hidden shadow-lg transform hover:scale-[1.03] transition duration-500 group">
+                    <img src="terr.jpg" alt="Pounded Yam and Egusi Soup" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-gray-800">
+                        <h4 class="text-xl font-semibold" style="color: var(--secondary-color);">Egusi & Swallow</h4>
+                        <p class="text-sm text-gray-400">Traditional comfort food.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3: Peppersoup -->
+                <div class="rounded-xl overflow-hidden shadow-lg transform hover:scale-[1.03] transition duration-500 group">
+                    <img src="yyyyyyyy - Copy.jpg" alt="Catfish Peppersoup" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-gray-800">
+                        <h4 class="text-xl font-semibold" style="color: var(--secondary-color);">Aromatic Peppersoup</h4>
+                        <p class="text-sm text-gray-400">Perfectly spiced and hot.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4: Plated Grill -->
+                <div class="rounded-xl overflow-hidden shadow-lg transform hover:scale-[1.03] transition duration-500 group">
+                    <img src="aaaaaaa.jpg" alt="Grilled Fish and Plantain" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-gray-800">
+                        <h4 class="text-xl font-semibold" style="color: var(--secondary-color);">Grilled Delicacy</h4>
+                        <p class="text-sm text-gray-400">Fresh fish, plantain, and sauce.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5: Cocktails -->
+                <div class="rounded-xl overflow-hidden shadow-lg transform hover:scale-[1.03] transition duration-500 group">
+                    <img src="HHJHJHJH.jpg" alt="Cocktails and Drinks" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-gray-800">
+                        <h4 class="text-xl font-semibold" style="color: var(--secondary-color);">Refreshing Mixes</h4>
+                        <p class="text-sm text-gray-400">Our signature cocktail selection.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6: Desserts -->
+                <div class="rounded-xl overflow-hidden shadow-lg transform hover:scale-[1.03] transition duration-500 group">
+                    <img src="hssg.jpg" alt="Delicious Dessert" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-gray-800">
+                        <h4 class="text-xl font-semibold" style="color: var(--secondary-color);">Sweet Endings</h4>
+                        <p class="text-sm text-gray-400">Desserts baked in-house.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation and Current Bookings Section -->
+    <section id="reservations" class="py-20 lg:py-28">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl font-extrabold text-center mb-6 tracking-tight" style="color: var(--primary-color);">
+                Book A Table
+            </h2>
+            <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+                Secure your spot for a premium dining experience. Reservations are highly recommended for dinner service.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Reservation Form -->
+                <div class="lg:col-span-2">
+                    <form id="reservation-form" class="p-8 lg:p-10 rounded-xl shadow-2xl border" style="background-color: #262626; border-color: var(--primary-color);">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Name -->
+                            <div>
+                                <label for="name" class="block text-sm font-medium mb-2 text-gray-300">Full Name</label>
+                                <input type="text" id="name" name="name" required class="w-full p-3 rounded-lg border-2 bg-gray-700 text-white focus:border-secondary-color transition duration-200" style="border-color: #4B5563;">
+                            </div>
+                            <!-- Email -->
+                            <div>
+                                <label for="email" class="block text-sm font-medium mb-2 text-gray-300">Email Address</label>
+                                <input type="email" id="email" name="email" required class="w-full p-3 rounded-lg border-2 bg-gray-700 text-white focus:border-secondary-color transition duration-200" style="border-color: #4B5563;">
+                            </div>
+                            <!-- Phone -->
+                            <div>
+                                <label for="phone" class="block text-sm font-medium mb-2 text-gray-300">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required class="w-full p-3 rounded-lg border-2 bg-gray-700 text-white focus:border-secondary-color transition duration-200" style="border-color: #4B5563;">
+                            </div>
+                            <!-- Guests -->
+                            <div>
+                                <label for="guests" class="block text-sm font-medium mb-2 text-gray-300">Number of Guests</label>
+                                <input type="number" id="guests" name="guests" min="1" max="10" value="2" required class="w-full p-3 rounded-lg border-2 bg-gray-700 text-white focus:border-secondary-color transition duration-200" style="border-color: #4B5563;">
+                            </div>
+                            <!-- Date -->
+                            <div>
+                                <label for="date" class="block text-sm font-medium mb-2 text-gray-300">Date</label>
+                                <input type="date" id="date" name="date" required class="w-full p-3 rounded-lg border-2 bg-gray-700 text-white focus:border-secondary-color transition duration-200" style="border-color: #4B5563;">
+                            </div>
+                            <!-- Time -->
+                            <div>
+                                <label for="time" class="block text-sm font-medium mb-2 text-gray-300">Time (e.g., 18:30)</label>
+                                <input type="time" id="time" name="time" required class="w-full p-3 rounded-lg border-2 bg-gray-700 text-white focus:border-secondary-color transition duration-200" style="border-color: #4B5563;">
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="mt-8 w-full flex items-center justify-center space-x-2 px-6 py-3 rounded-full text-lg font-bold shadow-xl hover:opacity-90 transition duration-300" style="background-color: var(--primary-color); color: var(--text-light);">
+                            <i data-lucide="utensils" class="w-5 h-5"></i>
+                            <span>Confirm Reservation</span>
+                        </button>
+
+                        <!-- Message Box -->
+                        <div id="reservation-message" class="mt-4 p-4 rounded-lg text-center font-medium hidden"></div>
+
+                    </form>
+                </div>
+
+                <!-- Live Reservations (Simulated Waitlist/Confirmation) -->
+                <div class="lg:col-span-1">
+                    <div class="p-8 lg:p-10 rounded-xl shadow-2xl border" style="background-color: #262626; border-color: var(--secondary-color);">
+                        <h3 class="text-2xl font-bold mb-4 flex items-center space-x-2" style="color: var(--secondary-color);">
+                            <i data-lucide="list-checks" class="w-6 h-6"></i>
+                            <span>Recent Bookings</span>
+                        </h3>
+                        <p class="text-sm text-gray-400 mb-4">See reservations made for today. Your User ID (for debugging): <span id="user-id" class="font-mono text-xs text-primary-color">...</span></p>
+                        <ul id="reservations-list" class="space-y-4">
+                            <!-- Reservations will be loaded here -->
+                            <li class="text-gray-500">Loading recent reservations...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact" class="py-12 lg:py-16 bg-gray-900 border-t" style="border-color: var(--primary-color);">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <!-- Brand Info -->
+                <div>
+                    <h4 class="text-2xl font-extrabold mb-4" style="color: var(--secondary-color);">Mercy Bite,  bunmi cake & pastries</h4>
+                    <p class="text-sm text-gray-400">
+                        Premium Dining in Ore,owo Ondo State. We blend traditional Nigerian flavors with modern culinary artistry.
+                    </p>
+                </div>
+                
+                                   <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4" style="color: var(--primary-color);">Contact Us</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li class="flex items-center space-x-2">
+                            <i data-lucide="phone" class="w-4 h-4 text-secondary-color"></i>
+                            <span>+2347046543026</span>
+                        </li
+                        <li class="flex items-center space-x-2">
+                            <i data-lucide="mail" class="w-4 h-4 text-secondary-color"></i>
+                            <span>mercyoluwabunmiolayiwola@gmail.com</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-secondary-color"></i>
+                            <span>Km 5, Ondo-Benin Exp Way,owo, Ore, Ondo State.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                                 <!-- Hours -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4" style="color: var(--primary-color);">Hours of Operation</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li>Mon - Fri: 9:00 AM - 10:00 PM</li>
+                        <li>Sat: 9:00 AM - 11:00 PM</li>
+                        <li>Sun: 1:00 PM - 9:00 PM</li>
+                    </ul>
+                </div>
+
+                <!-- Social -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4" style="color: var(--primary-color);">Follow Us</h4> tik,
+                                                                                                           instagram
+
+
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-secondary-color transition duration-200"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-secondary-color transition duration-200"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-secondary-color transition duration-200"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 pt-6 border-t border-gray-700 text-center text-sm text-gray-500">
+                &copy; 2025 Mercy Bite. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Firebase/JS Setup -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, addDoc, onSnapshot, collection, query, serverTimestamp, setLogLevel, orderBy, limit } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Set Firebase Log Level to Debug
+        setLogLevel('Debug');
+
+        // Global Firebase variables provided by the environment
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'mercy-bite-app';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        let app, db, auth, userId = null;
+        let isAuthReady = false;
+
+        const reservationsForm = document.getElementById('reservation-form');
+        const reservationsList = document.getElementById('reservations-list');
+        const reservationMessage = document.getElementById('reservation-message');
+        const userIdDisplay = document.getElementById('user-id');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // --- Utility Functions ---
+
+        // Function for showing messages to the user (instead of alert)
+        function showMessage(message, type = 'success') {
+            reservationMessage.textContent = message;
+            reservationMessage.className = 'mt-4 p-4 rounded-lg text-center font-medium';
+            if (type === 'success') {
+                reservationMessage.style.backgroundColor = '#10B981'; // Green-500
+                reservationMessage.style.color = 'white';
+            } else if (type === 'error') {
+                reservationMessage.style.backgroundColor = '#EF4444'; // Red-500
+                reservationMessage.style.color = 'white';
+            } else { // info
+                reservationMessage.style.backgroundColor = '#3B82F6'; // Blue-500
+                reservationMessage.style.color = 'white';
+            }
+            reservationMessage.classList.remove('hidden');
+        }
+
+        // --- Firebase Initialization and Auth ---
+
+        async function initializeFirebase() {
+            if (!firebaseConfig) {
+                console.error("Firebase configuration is missing.");
+                return;
+            }
+
+            try {
+                app = initializeApp(firebaseConfig);
+                auth = getAuth(app);
+                db = getFirestore(app);
+
+                // 1. Listen for auth state changes
+                onAuthStateChanged(auth, async (user) => {
+                    if (user) {
+                        userId = user.uid;
+                        userIdDisplay.textContent = userId;
+                        console.log("Firebase Auth Ready. User ID:", userId);
+                    } else {
+                        // This block should theoretically only run after a failed sign-in or sign-out
+                        console.log("User signed out or failed to sign in.");
+                    }
+                    isAuthReady = true;
+                    // Once auth is ready, start listening to data
+                    setupReservationsListener();
+                });
+
+                // 2. Perform initial sign-in
+                if (initialAuthToken) {
+                    await signInWithCustomToken(auth, initialAuthToken);
+                    console.log("Signed in with custom token.");
+                } else {
+                    await signInAnonymously(auth);
+                    console.log("Signed in anonymously.");
+                }
+
+            } catch (error) {
+                console.error("Firebase initialization or sign-in failed:", error);
+                showMessage("Database connection failed. Check console for details.", 'error');
+            }
+        }
+
+        // --- Firestore Operations ---
+
+        // Public collection path for reservations
+        function getReservationsCollectionRef() {
+            // Path: /artifacts/{appId}/public/data/reservations
+            return collection(db, `artifacts/${appId}/public/data/reservations`);
+        }
+
+        /**
+         * Saves a new reservation document to Firestore.
+         */
+        async function saveReservation(reservationData) {
+            if (!db || !userId) {
+                showMessage("Cannot save: Authentication not complete.", 'error');
+                return;
+            }
+
+            try {
+                // Add userId and server timestamp to the data before saving
+                const dataToSave = {
+                    ...reservationData,
+                    userId: userId, // The ID of the user who made the booking
+                    timestamp: serverTimestamp(),
+                    status: 'Pending'
+                };
+
+                const docRef = await addDoc(getReservationsCollectionRef(), dataToSave);
+
+                console.log("Reservation added with ID: ", docRef.id);
+                showMessage("Reservation successful! We look forward to seeing you.", 'success');
+                reservationsForm.reset(); // Clear the form on success
+
+            } catch (e) {
+                console.error("Error adding document: ", e);
+                showMessage("Failed to submit reservation. Please try again.", 'error');
+            }
+        }
+
+        /**
+         * Sets up a real-time listener for current reservations.
+         */
+        function setupReservationsListener() {
+            if (!isAuthReady || !db || !userId) return;
+
+            console.log("Setting up real-time reservations listener...");
+
+            // Query: Get the 5 most recent reservations, ordered by timestamp
+            const q = query(
+                getReservationsCollectionRef(),
+                orderBy("timestamp", "desc"),
+                limit(5)
+            );
+
+            onSnapshot(q, (snapshot) => {
+                reservationsList.innerHTML = '';
+                if (snapshot.empty) {
+                    reservationsList.innerHTML = `<li class="p-3 bg-gray-800 rounded-lg text-gray-400">No recent reservations found. Be the first!</li>`;
+                    return;
+                }
+
+                snapshot.forEach((doc) => {
+                    const res = doc.data();
+                    const dateObj = res.timestamp ? new Date(res.timestamp.toMillis()) : new Date();
+                    const formattedTime = res.time || 'N/A';
+                    const formattedDate = res.date || 'N/A';
+                    const formattedTimestamp = dateObj.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+
+                    const listItem = document.createElement('li');
+                    listItem.className = 'p-3 bg-gray-800 rounded-lg shadow-md border-l-4'
+                    listItem.style.borderColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim();
+                    listItem.innerHTML = `
+                        <p class="font-bold text-lg text-secondary-color">${res.guestName || 'Guest'}</p>
+                        <p class="text-sm text-gray-300 flex items-center space-x-2 mt-1">
+                            <i data-lucide="clock" class="w-4 h-4 inline-block"></i>
+                            <span>${formattedDate} at ${formattedTime}</span>
+                        </p>
+                        <p class="text-sm text-gray-400 flex items-center space-x-2">
+                            <i data-lucide="users" class="w-4 h-4 inline-block"></i>
+                            <span>${res.guests} Guests</span>
+                        </p>
+                    `;
+                    reservationsList.appendChild(listItem);
+                    // Re-render Lucide icons for new elements
+                    lucide.createIcons();
+                });
+                
+            }, (error) => {
+                console.error("Error listening to reservations:", error);
+                reservationsList.innerHTML = `<li class="text-red-400">Error loading bookings.</li>`;
+            });
+        }
+
+        // --- Event Listeners and Setup ---
+
+        reservationsForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            showMessage("Processing reservation...", 'info');
+            
+            const formData = new FormData(reservationsForm);
+            const reservationData = {
+                guestName: formData.get('name'),
+                guestEmail: formData.get('email'),
+                guestPhone: formData.get('phone'),
+                date: formData.get('date'),
+                time: formData.get('time'),
+                guests: parseInt(formData.get('guests')),
+            };
+            
+            saveReservation(reservationData);
+        });
+
+        // Toggle mobile menu
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Start the application
+        initializeFirebase();
+
+        // Helper to ensure icons are created after dynamic content loads
+        window.addEventListener('load', () => {
+             lucide.createIcons();
+        });
+    </script>
+</body>
+</html>

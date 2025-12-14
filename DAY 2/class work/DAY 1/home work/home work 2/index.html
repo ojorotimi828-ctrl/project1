@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercy Bite Cake & Pastries - Ore</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            pink: '#FFC0CB',
+                            gold: '#D4AF37',
+                            brown: '#5D4037',
+                            cream: '#FFFDD0',
+                            dark: '#3E2723'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['"Playfair Display"', 'serif'],
+                        body: ['"Poppins"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFFDD0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b59020;
+        }
+    </style>
+</head>
+<body class="font-body text-gray-800 bg-brand-cream smooth-scroll antialiased selection:bg-brand-gold selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-sm shadow-md fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#" class="text-2xl md:text-3xl font-heading font-bold text-brand-brown flex items-center gap-2">
+                    <i class="fas fa-birthday-cake text-brand-gold"></i>
+                    Mercy Bite
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-brand-dark hover:text-brand-gold font-medium transition">Home</a>
+                    <a href="#about" class="text-brand-dark hover:text-brand-gold font-medium transition">About Us</a>
+                    <a href="#menu" class="text-brand-dark hover:text-brand-gold font-medium transition">Menu</a>
+                    <a href="#contact" class="bg-brand-gold text-white px-6 py-2 rounded-full font-medium hover:bg-brand-brown transition transform hover:scale-105 shadow-lg">
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-brand-brown focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-100 animate-fade-in-down">
+                <a href="#home" class="block py-2 text-brand-dark hover:text-brand-gold">Home</a>
+                <a href="#about" class="block py-2 text-brand-dark hover:text-brand-gold">About Us</a>
+                <a href="#menu" class="block py-2 text-brand-dark hover:text-brand-gold">Menu</a>
+                <a href="#contact" class="block py-2 text-brand-gold font-bold">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg h-screen flex items-center justify-center text-center px-4 pt-16">
+        <div class="max-w-4xl mx-auto text-white">
+            <p class="text-brand-gold text-xl md:text-2xl mb-4 font-heading italic" data-aos="fade-down">Welcome to Ore's Finest</p>
+            <h1 class="text-5xl md:text-7xl font-heading font-bold mb-6 leading-tight drop-shadow-lg">
+                Sweet Moments,<br>Baked with Love
+            </h1>
+            <p class="text-lg md:text-xl mb-10 text-gray-200 max-w-2xl mx-auto">
+                From fluffy birthday cakes to savory meat pies, Mercy Bite brings the best flavors to your doorstep in Ore.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#menu" class="bg-brand-gold text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-brown transition transform hover:-translate-y-1 shadow-xl">
+                    View Our Menu
+                </a>
+                <a href="#contact" class="bg-white text-brand-brown px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition transform hover:-translate-y-1 shadow-xl">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 rounded-2xl bg-brand-cream/30 hover:shadow-xl transition duration-300">
+                    <div class="w-16 h-16 bg-brand-pink/20 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-brown">
+                        <i class="fas fa-bread-slice text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold mb-2">Freshly Baked</h3>
+                    <p class="text-gray-600">Every item is baked fresh daily in our kitchen in Ore using the finest local ingredients.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-brand-cream/30 hover:shadow-xl transition duration-300">
+                    <div class="w-16 h-16 bg-brand-pink/20 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-brown">
+                        <i class="fas fa-star text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold mb-2">Custom Designs</h3>
+                    <p class="text-gray-600">Wedding cakes, birthday masterpieces, or simple treats - we design to your specification.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-brand-cream/30 hover:shadow-xl transition duration-300">
+                    <div class="w-16 h-16 bg-brand-pink/20 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-brown">
+                        <i class="fas fa-truck text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold mb-2">Local Delivery</h3>
+                    <p class="text-gray-600">Fast and reliable delivery within Ore and nearby environs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-brand-brown text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-64 h-64 bg-brand-gold rounded-full opacity-10 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-brand-pink rounded-full opacity-10 blur-3xl"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Baker decorating cake" 
+                         class="rounded-lg shadow-2xl border-4 border-brand-gold transform -rotate-2 hover:rotate-0 transition duration-500">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h4 class="text-brand-gold font-heading text-xl mb-2">Our Story</h4>
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">Traditional Taste, Modern Flair</h2>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Mercy Bite Cake and Pastries started with a simple passion: to bring high-quality, delicious baked goods to the people of Ore. What began as a small home kitchen has grown into a beloved local spot for celebration cakes and daily snacks.
+                    </p>
+                    <p class="text-gray-300 mb-8 leading-relaxed">
+                        We believe that every bite should be a memory. Whether it's our rich, moist chocolate cake or our flaky, savory meat pies, we put our heart into everything we bake.
+                    </p>
+                    <div class="flex gap-4">
+                        <div class="text-center">
+                            <span class="block text-3xl font-bold text-brand-gold">5+</span>
+                            <span class="text-sm text-gray-400">Years Serving</span>
+                        </div>
+                        <div class="w-px bg-gray-600"></div>
+                        <div class="text-center">
+                            <span class="block text-3xl font-bold text-brand-gold">1000+</span>
+                            <span class="text-sm text-gray-400">Happy Customers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-brand-cream">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold text-brand-dark mb-4">Our Menu</h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-600">Explore our delicious range of treats</p>
+            </div>
+
+            <!-- Categories -->
+            <div class="flex justify-center mb-12 gap-4 flex-wrap">
+                <button onclick="filterMenu('all')" class="menu-btn active px-6 py-2 rounded-full border-2 border-brand-brown text-brand-brown font-medium hover:bg-brand-brown hover:text-white transition active-cat">All</button>
+                <button onclick="filterMenu('cakes')" class="menu-btn px-6 py-2 rounded-full border-2 border-brand-brown text-brand-brown font-medium hover:bg-brand-brown hover:text-white transition">Cakes</button>
+                <button onclick="filterMenu('pastries')" class="menu-btn px-6 py-2 rounded-full border-2 border-brand-brown text-brand-brown font-medium hover:bg-brand-brown hover:text-white transition">Pastries</button>
+                <button onclick="filterMenu('snacks')" class="menu-btn px-6 py-2 rounded-full border-2 border-brand-brown text-brand-brown font-medium hover:bg-brand-brown hover:text-white transition">Small Chops</button>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="menu-grid">
+                
+                <!-- Item 1: Cake -->
+                <div class="menu-item cakes bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Chocolate Drip Cake" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-brand-gold text-white font-bold px-3 py-1 rounded-full shadow-md">From ₦8,000</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-heading font-bold text-brand-brown mb-2">Chocolate Drip Cake</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Rich chocolate layers with ganache drip and assorted toppings. Perfect for birthdays.</p>
+                        <button onclick="orderItem('Chocolate Drip Cake')" class="w-full border-2 border-brand-brown text-brand-brown py-2 rounded-lg hover:bg-brand-brown hover:text-white transition font-medium">Order via WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Item 2: Pastry -->
+                <div class="menu-item pastries bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1572383672419-ab477998846e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Meat Pie" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-brand-gold text-white font-bold px-3 py-1 rounded-full shadow-md">₦500</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-heading font-bold text-brand-brown mb-2">Signature Meat Pie</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Flaky crust filled with seasoned minced meat, potatoes, and carrots. A local favorite!</p>
+                        <button onclick="orderItem('Signature Meat Pie')" class="w-full border-2 border-brand-brown text-brand-brown py-2 rounded-lg hover:bg-brand-brown hover:text-white transition font-medium">Order via WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Item 3: Cake -->
+                <div class="menu-item cakes bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Wedding Cake" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-brand-gold text-white font-bold px-3 py-1 rounded-full shadow-md">Custom Price</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-heading font-bold text-brand-brown mb-2">Classic Wedding Cake</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Elegant tiered cakes with floral decorations. Available in Vanilla, Red Velvet, and Fruit.</p>
+                        <button onclick="orderItem('Wedding Cake Inquiry')" class="w-full border-2 border-brand-brown text-brand-brown py-2 rounded-lg hover:bg-brand-brown hover:text-white transition font-medium">Get a Quote</button>
+                    </div>
+                </div>
+
+                <!-- Item 4: Pastry -->
+                <div class="menu-item pastries bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1626094309830-2b90bb70dd71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Sausage Rolls" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-brand-gold text-white font-bold px-3 py-1 rounded-full shadow-md">₦300</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-heading font-bold text-brand-brown mb-2">Gourmet Sausage Roll</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Perfectly spiced sausage meat wrapped in our buttery pastry dough.</p>
+                        <button onclick="orderItem('Sausage Roll')" class="w-full border-2 border-brand-brown text-brand-brown py-2 rounded-lg hover:bg-brand-brown hover:text-white transition font-medium">Order via WhatsApp</button>
+                    </div>
+                </div>
+
+                 <!-- Item 5: Small Chops/Snacks -->
+                 <div class="menu-item snacks bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1605256486090-333061244033?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Donuts" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-brand-gold text-white font-bold px-3 py-1 rounded-full shadow-md">₦1,500 / box</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-heading font-bold text-brand-brown mb-2">Glazed Donuts Box</h3>
+                        <p class="text-gray-600 mb-4 text-sm">A box of 4 fluffy, sweet glazed donuts. Mix of chocolate and plain glaze.</p>
+                        <button onclick="orderItem('Donut Box')" class="w-full border-2 border-brand-brown text-brand-brown py-2 rounded-lg hover:bg-brand-brown hover:text-white transition font-medium">Order via WhatsApp</button>
+                    </div>
+                </div>
+
+                 <!-- Item 6: Small Chops/Snacks -->
+                 <div class="menu-item snacks bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1599321955726-e04842d6d2e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Chin Chin" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-brand-gold text-white font-bold px-3 py-1 rounded-full shadow-md">₦1,000</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-heading font-bold text-brand-brown mb-2">Crunchy Chin Chin</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Milky, crunchy chin-chin available in jars or pouches. Great for events.</p>
+                        <button onclick="orderItem('Chin Chin')" class="w-full border-2 border-brand-brown text-brand-brown py-2 rounded-lg hover:bg-brand-brown hover:text-white transition font-medium">Order via WhatsApp</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-heading font-bold text-center text-brand-brown mb-12">What Our Customers Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-brand-cream p-8 rounded-xl shadow-md border-l-4 border-brand-gold">
+                    <div class="flex text-brand-gold mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"The best meat pie in Ore, hands down! The crust is always perfect and the filling is generous. Mercy Bite never disappoints."</p>
+                    <h4 class="font-bold text-brand-brown">- Chidinma O.</h4>
+                </div>
+                <div class="bg-brand-cream p-8 rounded-xl shadow-md border-l-4 border-brand-gold">
+                    <div class="flex text-brand-gold mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"Ordered a birthday cake for my daughter. It was not only beautiful but tasted amazing. Highly recommended!"</p>
+                    <h4 class="font-bold text-brand-brown">- Mr. Adebayo</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location -->
+    <section id="contact" class="py-20 bg-brand-dark text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12">
+                <!-- Contact Info -->
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-brand-gold">Visit Us in Ore</h2>
+                    <p class="text-gray-400 mb-8">Ready to satisfy your cravings? Call us to place an order or visit our bakery.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-brown flex items-center justify-center shrink-0">
+                                <i class="fas fa-map-marker-alt text-brand-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Location</h4>
+                                <p class="text-gray-400">123 Market Road, Near Ore Main Garage,<br>Ore, Ondo State, Nigeria.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-brown flex items-center justify-center shrink-0">
+                                <i class="fas fa-phone-alt text-brand-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Phone / WhatsApp</h4>
+                                <p class="text-gray-400">+234 800 123 4567</p>
+                                <p class="text-gray-400">+234 700 987 6543</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-brown flex items-center justify-center shrink-0">
+                                <i class="fas fa-clock text-brand-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Opening Hours</h4>
+                                <p class="text-gray-400">Mon - Sat: 8:00 AM - 7:00 PM</p>
+                                <p class="text-gray-400">Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="w-full md:w-1/2 bg-white rounded-xl p-8 text-gray-800">
+                    <h3 class="text-2xl font-heading font-bold mb-6 text-brand-brown">Send us a Message</h3>
+                    <form onsubmit="event.preventDefault(); alert('Thank you! We will contact you shortly.');">
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-gold focus:border-transparent outline-none" placeholder="John Doe">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                            <input type="tel" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-gold focus:border-transparent outline-none" placeholder="+234...">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Message / Order</label>
+                            <textarea class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-gold focus:border-transparent outline-none h-32" placeholder="I would like to order..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-brown text-white font-bold py-3 rounded-lg hover:bg-brand-dark transition duration-300 shadow-lg">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-brown border-t border-gray-700 text-white pt-10 pb-6">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-heading font-bold mb-4">Mercy Bite Cake & Pastries</h2>
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-gold transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-gold transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-gold transition"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="text-gray-400 text-sm">&copy; 2023 Mercy Bite Cake and Pastries. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Menu Filtering
+        function filterMenu(category) {
+            const items = document.querySelectorAll('.menu-item');
+            const buttons = document.querySelectorAll('.menu-btn');
+            
+            // Update Active Button
+            buttons.forEach(button => {
+                if (button.textContent.toLowerCase().includes(category === 'all' ? 'all' : category)) {
+                   button.classList.add('bg-brand-brown', 'text-white');
+                   button.classList.remove('text-brand-brown');
+                } else {
+                   button.classList.remove('bg-brand-brown', 'text-white');
+                   button.classList.add('text-brand-brown');
+                }
+                // Logic above is simplified for visual effect; specific class logic:
+                if (button.getAttribute('onclick').includes(category)) {
+                     button.classList.add('bg-brand-brown', 'text-white');
+                } else {
+                     button.classList.remove('bg-brand-brown', 'text-white');
+                }
+            });
+
+            // Filter Items
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                    // Add animation reset
+                    item.classList.add('animate-fade-in');
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Order functionality (Simulates WhatsApp)
+        function orderItem(itemName) {
+            // In a real scenario, this would link to WhatsApp API
+            const message = `Hello, I would like to order the ${itemName}.`;
+            const encodedMessage = encodeURIComponent(message);
+            // Example link: window.open(`https://wa.me/2348000000000?text=${encodedMessage}`, '_blank');
+            
+            // For demo:
+            alert(`Opening WhatsApp to order: ${itemName}\n\n(This would direct to your WhatsApp number)`);
+        }
+
+        // Sticky Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+                nav.classList.replace('py-4', 'py-2');
+            } else {
+                nav.classList.remove('shadow-lg');
+                nav.classList.replace('py-2', 'py-4');
+            }
+        });
+    </script>
+</body>
+</html>

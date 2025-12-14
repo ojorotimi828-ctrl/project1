@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orita Obele - Farm to Table Restaurant</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for custom colors and font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-green': '#1e3a24', // Deep, rich green
+                        'accent-gold': '#b45309',  // Earthy amber/gold
+                        'background-light': '#fefce8', // Creamy off-white
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Load Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom scroll-snap for smooth section scrolling */
+        html { scroll-behavior: smooth; }
+        .section-scroll { scroll-snap-align: start; }
+        /* Style for the reservation message box */
+        #reservation-message {
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="font-sans bg-background-light text-primary-green">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-primary-green/95 shadow-lg backdrop-blur-sm">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold text-accent-gold tracking-widest">
+              ORITA OBELE
+            </h1>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-background-light hover:text-accent-gold transition duration-300">Home</a>
+                <a href="#menu" class="text-background-light hover:text-accent-gold transition duration-300">Menu</a>
+                <a href="#gallery" class="text-background-light hover:text-accent-gold transition duration-300">Gallery</a>
+                <a href="#reservations" class="text-background-light hover:text-accent-gold transition duration-300">Reservations</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-background-light focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-primary-green/95 pb-4">
+            <a href="#home" class="block px-4 py-2 text-background-light hover:bg-primary-green/80">Home</a>
+            <a href="#menu" class="block px-4 py-2 text-background-light hover:bg-primary-green/80">Menu</a>
+            <a href="#gallery" class="block px-4 py-2 text-background-light hover:bg-primary-green/80">Gallery</a>
+            <a href="#reservations" class="block px-4 py-2 text-background-light hover:bg-primary-green/80">Reservations</a>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto">
+        <!-- Hero Section -->
+        <section id="home" class="section-scroll relative h-[70vh] md:h-[85vh] flex items-center justify-center">
+            <!-- Background Image Placeholder (Replace with actual high-quality image of the restaurant or fresh produce) -->
+            <img 
+                src="mee.jpg" 
+                alt="A beautiful spread of fresh farm ingredients" 
+                class="absolute inset-0 w-full h-full object-cover brightness-75"
+                onerror="this.onerror=null; this.src='https://placehold.co/1200x800/1e3a24/fefce8?text=Fresh+Farm+Produce';"
+            >
+            <div class="relative text-center p-8 bg-black/40 rounded-xl shadow-2xl">
+                <p class="text-xl md:text-2xl text-accent-gold font-medium mb-3 tracking-widest uppercase">
+                    From Our Land to Your Plate
+                </p>
+                <h2 class="text-5xl md:text-7xl font-bold text-background-light mb-4 leading-tight">
+                    Orita Obele
+                </h2>
+                <p class="text-lg md:text-xl text-gray-200">
+                    Authentic Farm-to-Table Dining in Ondo State
+                </p>
+                <a href="#reservations" class="mt-8 inline-block px-6 py-3 bg-accent-gold text-white font-semibold rounded-full shadow-lg hover:bg-amber-700 transition duration-300 transform hover:scale-105">
+                    Book Your Table Now
+                </a>
+            </div>
+        </section>
+
+        <!-- About/Concept Section -->
+        <section class="section-scroll py-16 md:py-24 px-4 bg-gray-50/70">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h3 class="text-4xl font-extrabold mb-4 border-b-4 border-accent-gold/50 pb-2">Our Philosophy</h3>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        Located in the lush agricultural heart of Orita Obele, Ondo State, our restaurant is a true celebration of local Nigerian produce. We partner directly with smallholder farms to ensure every ingredient is hyper-local, seasonal, and exceptionally fresh.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        'Orita Obele' is a commitment to sustainability, quality, and the rich culinary heritage of the Yoruba land. Experience dishes where the taste of the fresh earth is unmistakable.
+                    </p>
+                </div>
+                <!-- Concept Image Placeholder -->
+                <div class="rounded-xl overflow-hidden shadow-xl">
+                    <img 
+                        src="mee.jpg" 
+                        alt="Chef preparing food with fresh ingredients" 
+                        class="w-full h-full object-cover transition duration-500 hover:scale-105"
+                        onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e3a24/fefce8?text=Our+Kitchen';"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="section-scroll py-16 md:py-24 px-4 bg-background-light">
+            <h2 class="text-5xl font-extrabold text-center mb-12 text-primary-green">The Seasonal Menu</h2>
+            
+            <div class="space-y-12">
+                
+                <!-- Appetizers -->
+                <div class="bg-gray-100/80 p-6 rounded-2xl shadow-lg">
+                    <h3 class="text-3xl font-bold text-accent-gold mb-6 border-b border-accent-gold/50 pb-2">Starters: From The Garden</h3>
+                    <div class="grid md:grid-cols-2 gap-x-10 gap-y-6">
+                        <!-- Menu Item 1 -->
+                        <div class="flex justify-between items-start border-b border-gray-300 pb-3">
+                            <div>
+                                <h4 class="text-xl font-semibold">Yam Flour Dumplings (Amala)</h4>
+                                <p class="text-sm text-gray-600">Served with peppered snail and garden-fresh Utazi leaves.</p>
+                            </div>
+                            <span class="text-xl font-bold text-primary-green">₦3,500</span>
+                        </div>
+                        <!-- Menu Item 2 -->
+                        <div class="flex justify-between items-start border-b border-gray-300 pb-3">
+                            <div>
+                                <h4 class="text-xl font-semibold">Ondo State Ofada Rice Ball</h4>
+                                <p class="text-sm text-gray-600">Fermented rice balls lightly fried, with a spicy tomato dipping sauce.</p>
+                            </div>
+                            <span class="text-xl font-bold text-primary-green">₦2,800</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Courses -->
+                <div class="bg-gray-100/80 p-6 rounded-2xl shadow-lg">
+                    <h3 class="text-3xl font-bold text-accent-gold mb-6 border-b border-accent-gold/50 pb-2">Mains: The Harvest Plate</h3>
+                    <div class="grid md:grid-cols-2 gap-x-10 gap-y-6">
+                        <!-- Menu Item 3 -->
+                        <div class="flex justify-between items-start border-b border-gray-300 pb-3">
+                            <div>
+                                <h4 class="text-xl font-semibold">Efo Riro with Local Catfish</h4>
+                                <p class="text-sm text-gray-600">Spinach stew with smoked catfish, indigenous spices, and choice of swallow.</p>
+                            </div>
+                            <span class="text-xl font-bold text-primary-green">₦7,200</span>
+                        </div>
+                        <!-- Menu Item 4 -->
+                        <div class="flex justify-between items-start border-b border-gray-300 pb-3">
+                            <div>
+                                <h4 class="text-xl font-semibold">Gbegiri and Ewedu (Abula)</h4>
+                                <p class="text-sm text-gray-600">Traditional bean and jute leaf soup, served with goat meat and Iyan.</p>
+                            </div>
+                            <span class="text-xl font-bold text-primary-green">₦6,900</span>
+                        </div>
+                        <!-- Menu Item 5 -->
+                        <div class="flex justify-between items-start border-b border-gray-300 pb-3">
+                            <div>
+                                <h4 class="text-xl font-semibold">Cocoa-Glazed Guinea Fowl</h4>
+                                <p class="text-sm text-gray-600">Farm-raised fowl, glazed with locally sourced cocoa reduction, served with roasted plantain mash.</p>
+                            </div>
+                            <span class="text-xl font-bold text-primary-green">₦9,800</span>
+                        </div>
+                        <!-- Menu Item 6 -->
+                        <div class="flex justify-between items-start border-b border-gray-300 pb-3">
+                            <div>
+                                <h4 class="text-xl font-semibold">Taro Leaf Soup (Ofe Achara)</h4>
+                                <p class="text-sm text-gray-600">A rich, smoky soup featuring taro leaves and fresh river prawns.</p>
+                            </div>
+                            <span class="text-xl font-bold text-primary-green">₦8,500</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert -->
+                <div class="bg-gray-100/80 p-6 rounded-2xl shadow-lg">
+                    <h3 class="text-3xl font-bold text-accent-gold mb-6 border-b border-accent-gold/50 pb-2">Desserts: Sweetness of the Earth</h3>
+                    <div class="grid md:grid-cols-2 gap-x-10 gap-y-6">
+                        <!-- Menu Item 7 -->
+                        <div class="flex justify-between items-start border-b border-gray-300 pb-3">
+                            <div>
+                                <h4 class="text-xl font-semibold">Honey & Ginger Panna Cotta</h4>
+                                <p class="text-sm text-gray-600">Local honey-infused panna cotta with fresh ginger and mango coulis.</p>
+                            </div>
+                            <span class="text-xl font-bold text-primary-green">₦2,500</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section-scroll py-16 md:py-24 px-4 bg-primary-green/90 text-background-light">
+            <h2 class="text-5xl font-extrabold text-center mb-12 text-accent-gold">A Visual Feast</h2>
+            <p class="text-center text-gray-300 max-w-2xl mx-auto mb-10">
+                A gallery showcasing the stunning presentation of our seasonal dishes, capturing the freshness and passion in every plate.
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 rounded-xl overflow-hidden shadow-2xl">
+                <!-- Gallery Item 1 -->
+                <div class="aspect-square overflow-hidden">
+                    <img src="ttee.jpg" alt="Beautifully plated Efo Riro" class="w-full h-full object-cover transform hover:scale-105 transition duration-500 rounded-lg shadow-md">
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="aspect-square overflow-hidden">
+                    <img src="hssg.jpg" alt="Yam dumplings starter" class="w-full h-full object-cover transform hover:scale-105 transition duration-500 rounded-lg shadow-md">
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="aspect-square overflow-hidden">
+                    <img src="ddddd.jpg" alt="Cocoa glazed guinea fowl" class="w-full h-full object-cover transform hover:scale-105 transition duration-500 rounded-lg shadow-md">
+                </div>
+                <!-- Gallery Item 4 -->
+                <div class="aspect-square overflow-hidden">
+                    <img src="JJJJJJJ.jpg" alt="Fresh garden salad" class="w-full h-full object-cover transform hover:scale-105 transition duration-500 rounded-lg shadow-md">
+                </div>
+                <!-- Gallery Item 5 -->
+                <div class="aspect-square overflow-hidden">
+                    <img src="BBBBBBB.jpg" alt="Ofada rice sauce" class="w-full h-full object-cover transform hover:scale-105 transition duration-500 rounded-lg shadow-md">
+                </div>
+                <!-- Gallery Item 6 -->
+                <div class="aspect-square overflow-hidden">
+                    <img src="HHJHJHJH.jpg" alt="Honey panna cotta" class="w-full h-full object-cover transform hover:scale-105 transition duration-500 rounded-lg shadow-md">
+                </div>
+                <!-- Gallery Item 7 -->
+                <div class="aspect-square overflow-hidden">
+                    <img src="bncbbc.jpg" alt="Freshly squeezed beverage" class="w-full h-full object-cover transform hover:scale-105 transition duration-500 rounded-lg shadow-md">
+                </div>
+                <!-- Gallery Item 8 -->
+                <div class="aspect-square overflow-hidden">
+                    <img src="download.jpg" alt="Interior view of the restaurant" class="w-full h-full object-cover transform hover:scale-105 transition duration-500 rounded-lg shadow-md">
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservations Section -->
+        <section id="reservations" class="section-scroll py-16 md:py-24 px-4 bg-background-light">
+            <h2 class="text-5xl font-extrabold text-center mb-12 text-primary-green">Reserve Your Table</h2>
+
+            <div class="max-w-lg mx-auto bg-gray-100 p-8 rounded-2xl shadow-xl border-t-4 border-accent-gold">
+                <p class="text-center text-gray-600 mb-6">
+                    Book your intimate farm-to-table experience below. We look forward to hosting you.
+                </p>
+                <form id="reservation-form" class="space-y-4">
+                    
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                        <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-accent-gold focus:border-accent-gold transition duration-150">
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="date" class="block text-sm font-medium text-gray-700">Date</label>
+                            <input type="date" id="date" name="date" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-accent-gold focus:border-accent-gold transition duration-150">
+                        </div>
+                        <div>
+                            <label for="time" class="block text-sm font-medium text-gray-700">Time</label>
+                            <input type="time" id="time" name="time" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-accent-gold focus:border-accent-gold transition duration-150">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="guests" class="block text-sm font-medium text-gray-700">Number of Guests</label>
+                        <input type="number" id="guests" name="guests" min="1" max="12" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-accent-gold focus:border-accent-gold transition duration-150">
+                    </div>
+
+                    <!-- Hidden Message Box (Success/Error) -->
+                    <div id="reservation-message" class="hidden p-3 rounded-lg text-center font-semibold opacity-0"></div>
+
+                    <button type="submit" class="w-full py-3 mt-6 bg-primary-green text-background-light font-bold rounded-full shadow-lg hover:bg-primary-green/90 transition duration-300 transform hover:scale-[1.02]">
+                        Confirm Reservation
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary-green text-background-light py-10 px-4 mt-12">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            
+            <div>
+                <h4 class="text-2xl font-bold text-accent-gold mb-3">Orita Obele</h4>
+                <p class="text-sm">Farm-to-Table Dining.</p>
+                <p class="text-sm">Est. 2025</p>
+            </div>
+
+            <div>
+                <h4 class="text-xl font-semibold mb-3">Contact</h4>
+                <p class="text-sm">Phone: +09060289094</p>
+                <p class="text-sm">Email: john43@gmail.com</p>
+            </div>
+
+            <div>
+                <h4 class="text-xl font-semibold mb-3">Location</h4>
+                <p class="text-sm">Plot 4, Local Government Road,</p>
+                <p class="text-sm">Orita Obele, Ondo State, Nigeria.</p>
+                <p class="text-sm mt-2">Open monday 8AM - saturday 10:00PM close
+            </div>
+        </div>
+        <div class="mt-8 pt-4 border-t border-gray-700 text-center text-xs text-gray-500">
+            &copy; 2025 Orita Obele. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // --- Reservation System Logic ---
+        document.getElementById('reservation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const guests = document.getElementById('guests').value;
+            const messageBox = document.getElementById('reservation-message');
+
+            // Simple client-side validation check
+            if (!name || !date || !time || !guests) {
+                showMessage("Please fill out all fields.", "error");
+                return;
+            }
+
+            // In a real application, you would send this data to a server (Firebase, etc.).
+            // For this demonstration, we simulate a successful booking.
+            
+            console.log("Simulating reservation submission:");
+            console.log(`Name: ${name}, Date: ${date}, Time: ${time}, Guests: ${guests}`);
+
+            // Simulate server response delay
+            setTimeout(() => {
+                // Show success message
+                showMessage(`Thank you, ${name}! Your table for ${guests} guests on ${date} at ${time} has been reserved.`, "success");
+
+                // Clear the form
+                this.reset();
+            }, 500);
+        });
+
+        /**
+         * Shows a message in the reservation form area.
+         * @param {string} msg The message text.
+         * @param {('success'|'error')} type The type of message (determines color).
+         */
+        function showMessage(msg, type) {
+            const messageBox = document.getElementById('reservation-message');
+            messageBox.textContent = msg;
+            
+            // Set styles based on message type
+            if (type === "success") {
+                messageBox.className = 'p-3 rounded-lg text-center font-semibold bg-green-100 text-green-800 opacity-0';
+            } else {
+                messageBox.className = 'p-3 rounded-lg text-center font-semibold bg-red-100 text-red-800 opacity-0';
+            }
+            
+            // Make visible with fade-in effect
+            messageBox.classList.remove('hidden');
+            setTimeout(() => {
+                messageBox.style.opacity = '1';
+            }, 10); // Small delay to trigger transition
+
+            // Hide after 5 seconds
+            setTimeout(() => {
+                messageBox.style.opacity = '0';
+                // Wait for fade-out before hiding completely
+                setTimeout(() => {
+                    messageBox.classList.add('hidden');
+                }, 300);
+            }, 5000);
+        }
+
+        // --- Mobile Menu Toggle Logic ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+    </script>
+</body>
+</html>
